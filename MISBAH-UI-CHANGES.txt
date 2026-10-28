@@ -1,0 +1,15 @@
+MISBAH PENAL UI update notes
+
+Changed:
+- Added MISBAH_Background.mp4 as a bundled, looping full-screen video background with its original audio track.
+- Added translucent glass styling and grey borders to the key/home/function UI.
+- Removed the Settings button from the home and authorization screens.
+- Added Sign Out, which clears the saved license key and expiry so the authorization screen appears again.
+- Limited the bottom navigation to Home and Functions (renamed from Installed).
+- Simplified Functions to patch package rows, Import 3105, Select/Select All, and explicit Delete; swipe-to-delete is removed.
+- Removed search and utility rows from the Functions list.
+
+Important limitations:
+- iOS may interrupt playback due to system audio controls, interruptions, app lifecycle, or device settings; an app cannot guarantee that audio can never be stopped.
+- The existing patch package manager does not expose a real per-package ON/OFF activation API. No fake ON/OFF toggle has been added; existing import, inspect, and delete operations are retained.
+- The project was syntax-parsed for the edited Swift files, but a full Xcode/iOS build could not be run in this environment. Please run GitHub Actions/Xcode build and test on device.
